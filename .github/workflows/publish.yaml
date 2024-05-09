@@ -7,6 +7,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write # to verify the deployment originates from an appropriate
+      pages: write # to deploy to Pages
+      contents: read # to checkout private repositories
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
