@@ -52,3 +52,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifact_name: github-pages
+          skip_cleanup: true # Skip cleanup to ensure HTML/CSS files are not removed
+          publish_dir: ./dist # Specify the directory to deploy (only HTML and CSS)
