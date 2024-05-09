@@ -31,13 +31,6 @@ jobs:
 
       # If you don't have a build script, remove the following line
 
-      - name: Archive artifact
-        run: |
-          mkdir -p dist
-          # Copy only the necessary files to dist (assuming index.html is in the root)
-          cp index.html ./dist
-          # Compress the dist directory
-          tar -czf dist.tar.gz ./dist
 
       - name: Upload artifact (upgraded to v4)
         uses: actions/upload-artifact@v4
