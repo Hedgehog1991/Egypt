@@ -1,0 +1,92 @@
+/* SAILING STYLES */
+
+.content-container {
+  /* background: green; */
+}
+
+.sailing-image {
+  visibility: visible;
+  top: 50%;
+  left: 5%;
+  width: 35%;
+  height: 45%;
+  box-shadow: 10px 10px 20px 10px rgba(58, 57, 57, 0.891);
+  cursor: pointer;
+}
+.sailing-image2 {
+  position: absolute;
+  visibility: hidden;
+  top: 12%;
+  left: 16%;
+  width: 40%;
+  height: 26%;
+  border-radius: 5%;
+  border: 2px solid gray;
+}
+.sailing-image3 {
+  position: absolute;
+  visibility: hidden;
+  top: 5%;
+  left: 60%;
+  width: 35%;
+  height: 40%;
+  border-radius: 5%;
+  border: 2px solid gray;
+}
+.sailing-txt{
+  visibility: hidden;
+  position: absolute;
+  width: 23%;
+  padding: 2%;
+  top: 55%;
+  left: 55%;
+  text-align: center;
+  border: 3px solid grey;
+  overflow-wrap: break-word;
+  font-family: 'Times New Roman', Times, serif;
+ background-color: antiquewhite;
+ font-weight: bold;
+ font-size: larger;
+ box-shadow:  10px 10px 20px 10px rgba(58, 57, 57, 0.891);
+ box-shadow:  inset 5px 5px 5px rgba(140, 139, 139, 0.891);
+}
+body:has(.sailing-image:hover) .content-container > p,
+body:has(.sailing-image:hover) .content-container > .sailing-image2,
+body:has(.sailing-image:hover) .content-container > .sailing-image3{
+   animation: slide 2s  ease-in ;
+  visibility: visible;
+  
+}
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+  }
+  50% {
+    transform: translateX() ;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
+
+/* Plage the one box to the right and not the others */
+.container-element:not(.sailing-box) {
+  border-radius: 50% 5% 5% 50%;
+  
+}
+
+
+
+.content-container > .box1 {
+  height: 50px;
+  width: 50px;
+  background: red;
+}
+
+.content-container > .box1 {
+  height: 50px;
+  width: 50px;
+  background: red;
+}

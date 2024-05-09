@@ -1,0 +1,96 @@
+/* IFTAR STYLES  */
+.content-container {
+  /* background: green; */
+}
+.flag-image{
+  width: 100%;
+}
+.iftar-image {
+  cursor: pointer;
+  visibility: visible;
+  top: 10%;
+  left: 5%;
+  width: 27%;
+  height: 40%;
+  box-shadow: 10px 10px 20px 10px rgba(58, 57, 57, 0.891);
+}
+.iftar-image2, .iftar-image3, .iftar-image4{
+  border: 2px solid gray;
+  border-radius: 2%;
+}
+.iftar-image2 {
+  position: absolute;
+  visibility: visible;
+  top: 5%;
+  left: 60%;
+  width: 30%;
+  height: 55%;
+  opacity: 0;
+}
+
+.iftar-image3 {
+  position: absolute;
+  visibility: visible;
+  top: 63%;
+  left: 10%;
+  width: 37%;
+  height: 42%;
+  opacity: 0;
+}
+.iftar-image4 {
+  position: absolute;
+  visibility: visible;
+  top: 70%;
+  left: 60%;
+  width: 30%;
+  height: 34%;
+  opacity: 0;
+}
+.iftar-text{
+  visibility: visible;
+  position: absolute;
+  text-align: center;
+  border: 3px solid grey;
+  overflow-wrap: break-word;
+  font-family: 'Times New Roman', Times, serif;
+ background-color: rgb(188, 176, 160);
+ box-shadow:  10px 10px 20px 10px rgba(58, 57, 57, 0.891);
+ box-shadow:  inset 5px 5px 5px rgba(140, 139, 139, 0.891);
+ font-size: 110%;
+ padding: 1%; 
+  opacity: 0;
+  width: 22%;
+  left: 34%;
+  top: 6%;
+  font-weight: bold;
+}
+body:has(.iftar-image:hover) .content-container > p{
+  animation: fadein .6s forwards ease-in;
+}
+body:has(.iftar-image:hover) .content-container > .iftar-image2{
+  animation: fadein .6s forwards ease-in;
+}
+body:has(.iftar-image:hover) .content-container > .iftar-image3{
+  animation: fadein .6s forwards ease-in;
+}body:has(.iftar-image:hover) .content-container > .iftar-image4{
+  animation: fadein .6s forwards ease-in;
+}
+
+@keyframes fadein {
+  0%{
+  opacity: 0%;
+  }100%{
+    opacity: 100%;
+  }
+}
+
+
+/* Plage the one box to the right and not the others */
+.container-element:not(.iftar-box) {
+  border-radius: 50% 5% 5% 50%;
+}
+.content-container > .box1 {
+  height: 50px;
+  width: 50px;
+  background: red;
+}
