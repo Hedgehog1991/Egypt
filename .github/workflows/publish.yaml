@@ -7,11 +7,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      id-token: write # to verify the deployment originates from an appropriate
-      pages: write # to deploy to Pages
-      contents: read # to checkout private repositories
+      id-token: write
+      pages: write
+      contents: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -24,8 +23,14 @@ jobs:
       - run: npm ci
       # If you don't have a build script, remove the line below
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - name: Create artifact
+        run: |
+          mkdir -p dist
+          # If your files are in the root directory, adjust this command accordingly
+          cp -r * dist/
+      - uses: actions/upload-artifact@v2
         with:
+          name: github-pages
           path: ./dist
       - uses: actions/deploy-pages@v4
         id: deployment
