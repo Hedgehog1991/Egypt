@@ -25,12 +25,11 @@ jobs:
       - run: npm run build
       - name: Create artifact
         run: |
-          mkdir -p dist
-          # If your files are in the root directory, adjust this command accordingly
-          cp -r * dist/
+          mkdir -p artifact
+          find . -maxdepth 1 -type f -not -path './dist/*' -exec mv {} artifact/ \;
       - uses: actions/upload-artifact@v2
         with:
           name: github-pages
-          path: ./dist
+          path: ./artifact
       - uses: actions/deploy-pages@v4
         id: deployment
